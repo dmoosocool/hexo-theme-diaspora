@@ -1,0 +1,149 @@
+#topArchive
+  height 100%
+
+#vibrant
+  position absolute
+  top 0
+  left 0
+  width 100%
+  height 100%
+  background-color rgba(0,0,0,.28)
+
+@media screen and (max-width: 780px) {
+  #vibrant svg {
+    display: none;
+  }
+}
+
+// 顶部文章样式.
+#topArchive-content
+  position absolute
+  top 42%
+  left 10%
+  width 28%
+  .date 
+    color #fff
+    font-size 10px
+  .title
+    font-size 28px
+    margin-top 15px
+    font-weight 400
+    a
+      color #fff
+      text-decoration none
+  .description
+    color #fff
+    font-size 13px
+    margin-top 30px
+    line-height 18px
+
+// 文章列表样式.
+.archive-list-wrapper
+  position relative
+  overflow hidden
+  &:before
+    content ''
+    display block
+    width 1px
+    height 200%
+    position absolute
+    top 0
+    left 50%
+    background-color #eaeaea
+    z-index 0
+  .archive-list
+    position relative
+    z-index 1
+    .archive
+      position relative
+      width 1200px
+      margin 100px auto 0
+      > a
+        display inline-block
+        width 680px
+        height 440px
+        overflow hidden
+        position relative
+        z-index 3
+        box-shadow 0 0 5px rgba(0,0,0,.5)
+        img
+          width 100%
+          height 100%
+          object-fit cover
+      .archive-content
+        position absolute
+        background #fff
+        text-align left
+        top 20px
+        height 398px
+        width 498px
+        border 1px solid rgba(6,6,6,.2)
+        .archive-time
+          color #999
+          font-size 12px
+          margin 80px 0 0 80px
+        .archive-title
+          font-size 30px
+          line-height 110%
+          margin 10px 100px 0 80px
+          a
+            color #333
+            text-decoration none
+            font-weight 400
+        .archive-description
+          color #555
+          margin 10px 100px 0 80px
+          font-size 14px
+          line-height 1.8
+        .archive-info
+          position absolute
+          left 80px
+          bottom 80px
+          color #999
+          font-size 13px
+          i 
+            font-style normal
+            display inline-block
+            vertical-align middle
+            margin-right 10px
+            font-family "icomoon","Hiragino Sans GB","Hiragino Sans GB W3","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif
+            &:before
+              display inline-block
+              vertical-align top
+              margin-right 7px
+              font-size 16px
+      &:nth-child(odd)
+        text-align left
+        .archive-content
+          left 660px
+      &:nth-child(even)
+        text-align right
+        .archive-content
+          right 660px
+
+.page-wapper
+  text-align center
+  margin 70px 0
+  position relative
+  .page
+    border 1px solid #dadada
+    margin 0 auto
+    width 120px
+    height 30px
+    line-height 30px
+    a
+      display block
+      font-size 14px
+      letter-spacing 5px
+      color #666
+      background #fff
+      text-decoration none 
+  .more
+    width 180px
+    a
+      width 89px
+      float left
+      &:nth-child(1)
+        margin-left 1px
+        border-right 1px solid #eaeaea
+
