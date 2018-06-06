@@ -1,87 +1,95 @@
 <div id="pageLoader"></div>
-<header>
-<%
-    // 最新的文章.
-    var topArchive, defaultArchive = {
-        date: Date.now(), 
-        path: '/',
-        pic: 'images/006tNc79gy1fmiojegryuj31kw0w0dlz.jpg',
-        content: '暂无文章, 请火速添加.'
-    };
 
-    topArchive = defaultArchive;
-    // 如果有则取最新的文章.
-    if(page.posts && page.posts.data) {
-        topArchive = page.posts.data[0];
-    }
-
-    var archiveList = page.posts.data;
-%>
-  
-<div id="topArchive-bg" data-ibg-bg="<%- getArchivePic(topArchive) %>">
-  <div id="vibrant">
-    <svg viewBox="0 0 2880 1620" height="100%" preserveAspectRatio="xMaxYMax slice">
-        <polygon opacity="0.7" points="2000,1620 0,1620 0,0 600,0 " style="fill: rgb(9, 69, 132);"></polygon>
-    </svg>
-    <div style="background-color: rgb(9, 69, 132);"></div>
-  </div>
-
-  <div id="topArchive-content">
-    <p class="date"><%- getDiasporaDate(full_date(topArchive.date, 'MM DD, YYYY')) %></p>
-    <h2 class="title"><a href="<%- url_for(topArchive.path) %>" /><%- topArchive.title %></a></h2>
-    <p class="description"><%- truncate(strip_html(topArchive.excerpt || topArchive.content ), {length: 50}) %></p>
-  </div>
+<div class="logo">
+  <a href="<%- config.root%>"><%- config.title%></a>
 </div>
-</header>
 
-<div class="archive-list-wrapper">
-  <div class="archive-list">
-<%
-  for(var i = 0; i < archiveList.length; i ++) {
-  var archive = archiveList[i];
-  if(topArchive._id == archive._id) continue;
-%>
-  <div class="archive">
-    <a href="<%- url_for(archive.path) %>" title="<%- archive.title%>">
-      <img src="<%- getArchivePic(archive) %>"/>
-    </a>
-    <div class="archive-content">
-      <p class="archive-time"><%- getDiasporaDate(full_date(archive.date, 'MM DD, YYYY')) %></p>
-      <h3 class="archive-title"><a href="<%- url_for(archive.path) %>" /><%- archive.title %></a></h3>
-      <p class="archive-description"><%- truncate(strip_html(archive.excerpt || archive.content ), {length: 50}) %></p>
+<div id="container" style="display:none;">
+  <header>
+  <%
+      // 最新的文章.
+      var topArchive, defaultArchive = {
+          date: Date.now(), 
+          path: '/',
+          pic: 'images/006tNc79gy1fmiojegryuj31kw0w0dlz.jpg',
+          content: '暂无文章, 请火速添加.'
+      };
 
-      <div class="archive-info">
-        <i class="icon-letter"><%- getArchiveCount(archive.content)%></i>
+      topArchive = defaultArchive;
+      // 如果有则取最新的文章.
+      if(page.posts && page.posts.data) {
+          topArchive = page.posts.data[0];
+      }
+
+      var archiveList = page.posts.data;
+  %>
+    
+  <div id="topArchive-bg" data-ibg-bg="<%- getArchivePic(topArchive) %>">
+    <div id="vibrant">
+      <svg viewBox="0 0 2880 1620" height="100%" preserveAspectRatio="xMaxYMax slice">
+          <polygon opacity="0.7" points="2000,1620 0,1620 0,0 600,0 " style="fill: rgb(9, 69, 132);"></polygon>
+      </svg>
+      <div style="background-color: rgb(9, 69, 132);"></div>
+    </div>
+
+    <div id="topArchive-content">
+      <p class="date"><%- getDiasporaDate(full_date(topArchive.date, 'MM DD, YYYY')) %></p>
+      <h2 class="title"><a href="<%- url_for(topArchive.path) %>" /><%- topArchive.title %></a></h2>
+      <p class="description"><%- truncate(strip_html(topArchive.excerpt || topArchive.content ), {length: 50}) %></p>
+    </div>
+  </div>
+  </header>
+
+  <div class="archive-list-wrapper">
+    <div class="archive-list">
+  <%
+    for(var i = 0; i < archiveList.length; i ++) {
+    var archive = archiveList[i];
+    if(topArchive._id == archive._id) continue;
+  %>
+    <div class="archive">
+      <a href="<%- url_for(archive.path) %>" title="<%- archive.title%>">
+        <img src="<%- getArchivePic(archive, {width: 680, quality: 100}) %>"/>
+      </a>
+      <div class="archive-content">
+        <p class="archive-time"><%- getDiasporaDate(full_date(archive.date, 'MM DD, YYYY')) %></p>
+        <h3 class="archive-title"><a href="<%- url_for(archive.path) %>" /><%- archive.title %></a></h3>
+        <p class="archive-description"><%- truncate(strip_html(archive.excerpt || archive.content ), {length: 50}) %></p>
+
+        <div class="archive-info">
+          <i class="icon-letter"><%- getArchiveCount(archive.content)%></i>
+          <i class="icon-view"></i>
+          <i class="icon-like"></i>
+        </div>
+      </div>
+    </div>    
+  <%        
+    }
+  %>
+    </div>
+
+    <div class="page-wapper">
+      <div class="page<%- (page.prev && page.next) ? ' more' : ''%>">
+  <%
+    if(page.current > 1){
+  %>
+        <a href="<%- config.root + page.prev_link%>">上一页</a>
+  <%    
+    }
+  %>
+  <%
+    if(page.current < page.total){
+  %>
+        <a href="<%- config.root + page.next_link%>">下一页</a>
+  <%
+    }
+  %>
       </div>
     </div>
-
- 
-  </div>    
-<%        
-  }
-%>
-  </div>
-
-  <div class="page-wapper">
-    <div class="page<%- (page.prev && page.next) ? ' more' : ''%>">
-<%
-  if(page.current > 1){
-%>
-      <a href="<%- config.root + page.prev_link%>">上一页</a>
-<%    
-  }
-%>
-<%
-  if(page.current < page.total){
-%>
-      <a href="<%- config.root + page.next_link%>">下一页</a>
-<%
-  }
-%>
-    </div>
   </div>
 </div>
-
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
 <%- partial('tpl/footer'); %>
-<%- js('vendor/jquery.interactive_bg.min') %>
-<%- js('js/index') %>
+<%- js('vendor/jquery.interactive_bg.min'); %>
+<%- js('lib/leancloud'); %>
+<%- js('js/index'); %>

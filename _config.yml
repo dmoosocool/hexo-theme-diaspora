@@ -1,1 +1,13 @@
 # ===== 主题参数配置 ===== #
+# Code Highlight theme
+# Available value:
+#    normal | night | night eighties | night blue | night bright
+# https://github.com/chriskempson/tomorrow-theme
+highlight_theme: night
+qiniu:
+  enabled: true #是否开启七牛
+  ssl: true #是否开启https
+  host:
+    http: http://os5ajhpu8.bkt.clouddn.com #七牛http域名
+    https: https://images.kya.cc # 七牛https域名
+  

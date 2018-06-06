@@ -1,1 +1,73 @@
-<h1>post</h1>
+<div id="top">
+  <a class="archive-logo" href="<%- config.root%>"><%- config.title%></a>
+  <h3 class="subtitle"><%- page.title%></h3>
+  <div class="right-iconbar">
+    <a href="javascript:void(0)" class="like-this" title="like this"></a>
+    <div class="share">
+      <a title="获取二维码" class="icon-wechat" href="javascript:void(0);"></a>
+      <div id="qrcode"></div>
+    </div>
+  </div>
+  <div class="scrollbar"></div>
+</div>
+
+<div class="article-wapper">
+  <h2><%- page.title%></h2>
+  <!-- 文章描述 -->
+  <div class="describe">
+    <span class="date"><%- getDiasporaDate(full_date(page.date, 'MM DD, YYYY')) %></span>
+    <span class="length">字数　<em><%- getArchiveCount(page.content)%></em></span>
+    <span class="reader">阅读 <em></em></span>
+    <span class="comment">回复 <em></em></span>
+    <span class="likes">喜欢 <em></em></span>
+  </div>
+
+  <!-- 文章正文 -->
+  <div class="content">
+    <%- page.content%>
+  </div>
+
+  <div id="comment"></div>
+</div>
+
+<!-- 相关文章 -->
+<div class="relevant-wapper">
+  <div class="relevant">
+    <div class="relevant-header">
+      <p>
+        <em>相关文章</em>
+        <span>
+          <a class="scrolltop" href="javacript:void(0)">返回顶部</a>
+          <%- (page.next && page.next.path) ? "<a href="+url_for(page.next.path)+">下一篇</a>" : '<a href="javascript:void(0)">没有了</a>' %>
+        </span>
+      </p>
+    </div>
+    <ul class="relevant-list">
+      <%
+        var arr = getCategoryList(page);
+        for( var i in arr) {
+          var article = arr[i];
+      %>
+      <li>
+        <div class="article-left">
+          <a href="<%- url_for(article.path) %>"><%- article.title%></a>
+          <p><%- truncate(strip_html(article.excerpt || article.content ), {length: 100}) %></p>
+        </div>
+        <div class="article-right">
+          <a href="<%- url_for(article.path) %>">
+            <img src="<%- getArchivePic(article, {width: 200, quality: 100}) %>"/>
+          </a>
+        </div>
+      </li>
+      <%
+        }
+      %>
+    </div>
+  </div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<%- js('lib/leancloud'); %>
+<%- js('vendor/qrcode'); %>
+<%- partial('tpl/footer'); %>
+<%- js('js/post'); %>

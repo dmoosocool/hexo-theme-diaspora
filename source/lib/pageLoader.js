@@ -1,5 +1,5 @@
 ;(function(window, undefined){
-  var pageLoader = function pageLoader(target, options) {
+  var pageLoader = function pageLoader(target, options, loaderCallback) {
     // 动画数组.
     var spinners = [
       '<div class="fl spinner0"></div>',
@@ -26,6 +26,8 @@
         imagePath:''          // Default Path custom image
     }, options);
 
+
+
     var el = $(target);
 
     // 设置样式.
@@ -47,15 +49,58 @@
 
     run(settings.spinner);
 
-    setTimeout(function(){
-      el.fadeOut();
-    }, settings.timeToHide);
+    var showPage = function(status) {
+      if(!!status){
+        // 文档加载完毕.
+        $(function(){
+          el.fadeOut();
+          $('#container').show();
+
+          loaderCallback && loaderCallback();
+        });
+      }
+    };
+
+    var imgs = document.getElementsByTagName('img'),
+      i = 0,
+      pageImgLoaded = false;
+      topArchiveBgLoaded = false;
+
+    // 50ms监听一次页面图片是否加载完毕.
+    var imgTimer = setInterval(function(){
+      for(var i in imgs){
+        if(imgs[i].complete){
+          i++;
+          if(i === imgs.length) {
+            clearInterval(imgTimer);
+            pageImgLoaded = true;
+            showPage(pageImgLoaded && topArchiveBgLoaded);
+          }
+        }
+      }
+    },50);
+
+    // 50ms监听一次顶部背景图片是否加载完毕.
+    var topArchiveTimer = setInterval(function(){
+      var url = $('#topArchive-bg').data('ibg-bg');
+      var image = new Image();
+      image.src = url;
+      image.onload = function(){
+        clearInterval(topArchiveTimer);
+        topArchiveBgLoaded = true;
+        showPage(pageImgLoaded && topArchiveBgLoaded);
+      }
+    }, 50);
+
 
     el.css({
       backgroundColor: settings.bgColor,
       zIndex: settings.zIndex
     });
   };
+
+
+
 
   var run = function(){
     var winW = $(window).width(),
