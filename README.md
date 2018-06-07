@@ -21,7 +21,7 @@
 
 diaspora theme for hexo.
 
-A beautiful hexo theme, rewrite by [disapora](https://github.com/LoeiFy/Diaspora). thanks a lot[@LoeiFy](https://github.com/LoeiFy/diaspora).
+A beautiful hexo theme, rewrite by [diaspora](https://github.com/LoeiFy/Diaspora). thanks a lot[@LoeiFy](https://github.com/LoeiFy/diaspora).
 
 
 
@@ -44,14 +44,14 @@ _config.yml  node_modules  package.json  public  scaffolds  source  themes
 **3.** download theme.
 
 ```shell
-$ git clone https://github.com/dmoosocool/hexo-theme-diaspora themes/disapora
+$ git clone https://github.com/dmoosocool/hexo-theme-diaspora themes/diaspora
 ```
 
 **4.** copy the `default._config.yml` file to your **hexo root** directory.
 
 ```sh
 $ mv _config.yml bak._config.yml
-$ cp themes/disapora/default._config.yml ./_config.yml
+$ cp themes/diaspora/default._config.yml ./_config.yml
 ```
 
 **5.** update post template (${hexo_root}/scaffolds/post.md).
@@ -105,7 +105,7 @@ see your beautiful blog. open the link on your browser. http://localhost:4000
 ## Upgrade theme
 
 ```shell
-$ cd themes/disapora
+$ cd themes/diaspora
 $ git pull
 ```
 
@@ -113,7 +113,7 @@ $ git pull
 
 ## Already realized functions
 
-**1.** UI rewrite by [disapora](https://github.com/LoeiFy/Diaspora).
+**1.** UI rewrite by [diaspora](https://github.com/LoeiFy/Diaspora).
 
 **2.** use comment system by [Valine](https://github.com/xCss/Valine).
 

@@ -21,7 +21,7 @@
 
 diaspora的hexo主题.
 
-一个漂亮的 hexo 主题, 重写于 [disapora](https://github.com/LoeiFy/Diaspora). 非常感谢[@LoeiFy](https://github.com/LoeiFy/diaspora).
+一个漂亮的 hexo 主题, 重写于 [diaspora](https://github.com/LoeiFy/Diaspora). 非常感谢[@LoeiFy](https://github.com/LoeiFy/diaspora).
 
 
 
@@ -44,14 +44,14 @@ _config.yml  node_modules  package.json  public  scaffolds  source  themes
 **3.** 下载主题
 
 ```shell
-$ git clone https://github.com/dmoosocool/hexo-theme-diaspora themes/disapora
+$ git clone https://github.com/dmoosocool/hexo-theme-diaspora themes/diaspora
 ```
 
 **4.** 拷贝 `default._config.yml` 文件到你的 **hexo** 的主目录.
 
 ```sh
 $ mv _config.yml bak._config.yml
-$ cp themes/disapora/default._config.yml ./_config.yml
+$ cp themes/diaspora/default._config.yml ./_config.yml
 ```
 
 **5.** 修改`post.md` 脚手架 (${hexo_root}/scaffolds/post.md).
@@ -112,7 +112,7 @@ $ hexo clean && hexo g && hexo s
 ## 升级主题
 
 ```shell
-$ cd themes/disapora
+$ cd themes/diaspora
 $ git pull
 ```
 
@@ -120,7 +120,7 @@ $ git pull
 
 ## 已完成的功能项
 
-**1.** UI 重写于[disapora](https://github.com/LoeiFy/Diaspora).
+**1.** UI 重写于[diaspora](https://github.com/LoeiFy/Diaspora).
 
 **2.** 使用[Valine](https://github.com/xCss/Valine)评论系统.
 
