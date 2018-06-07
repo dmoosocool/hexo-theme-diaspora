@@ -1,9 +1,25 @@
 <div id="pageLoader"></div>
-
-<div class="logo">
-  <a href="<%- config.root%>"><%- config.title%></a>
+<div class="nav">
+  <ul id="menu-menu" class="menu">
+    <%
+      for( var i in config.menu) {
+    %>
+      <li class="menu-item"> <a href="<%- config.menu[i];%>" <%- ( (config.menu[i]+"").indexOf('http') > -1 ) ? 'target="_blank"' : '';%> class="pviewa"><%- i%></a></li>
+    <%
+      }
+    %>
+  </ul>
+  <p>© 2018 呆萌. Powered by <a href="https://hexo.io" target="_blank">Hexo</a> Theme <a href="https://github.com/dmoosocool/hexo-theme-diaspora" target="_blank">Disapora</a> by dmoosocool.</p>
 </div>
+<div class="index-header">
+  <div class="logo">
+    <a href="<%- config.root%>"><%- config.title%></a>
+  </div>
 
+  <div class="menu">
+    <div class="icon-menu switchmenu"></div>
+  </div>
+</div>
 <div id="container" style="display:none;">
   <header>
   <%
@@ -25,6 +41,7 @@
   %>
     
   <div id="topArchive-bg" data-ibg-bg="<%- getArchivePic(topArchive) %>">
+    <img id="cover" src="<%- getArchivePic(topArchive) %>" crossorigin="anonymous" style="visibility: hidden;"/>
     <div id="vibrant">
       <svg viewBox="0 0 2880 1620" height="100%" preserveAspectRatio="xMaxYMax slice">
           <polygon opacity="0.7" points="2000,1620 0,1620 0,0 600,0 " style="fill: rgb(9, 69, 132);"></polygon>
@@ -92,4 +109,5 @@
 <%- partial('tpl/footer'); %>
 <%- js('vendor/jquery.interactive_bg.min'); %>
 <%- js('lib/leancloud'); %>
+<%- js('vendor/vibrant')%>
 <%- js('js/index'); %>

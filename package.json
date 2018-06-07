@@ -1,5 +1,5 @@
 {
-  "name": "diaspora",
+  "name": "hexo-theme-diaspora",
   "version": "1.0.0",
   "description": "diaspora for hexo.",
   "main": "index.js",

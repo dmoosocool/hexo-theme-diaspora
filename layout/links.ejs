@@ -7,10 +7,28 @@
   <a class="archive-logo" href="<%- config.root%>"><%- config.title%></a>
 </div>
 
-<div class="article-wapper">
-  <!-- 文章正文 -->
-  <div class="content">
-    <%- page.content%>
+<div class="links-wapper">
+  <h3>友情链接</h3>
+  <ul class="links">
+  <%
+    for(var i=0; i < config.links.length; i++) {
+      var link = config.links[i].item;
+  %>
+    <li>
+      <a href="<%-link.url%>">
+        <img src="<%- link.icon%>" title="<%- link.title%>"/>
+        <h4><%- link.title%></h4>
+        <p><%- link.description%></p>
+      </a>
+    </li>
+  <%
+    }
+  %>
+  </ul>
+  
+  <div class="link-tips">
+    <h4>友链申请</h4>
+    <span>先友后链, 需要加友链的盆友请在下方留言, 我将会火速添加~</span>
   </div>
 
   <div id="comment"></div>

@@ -11,6 +11,17 @@
     text-indent -999px
     background-size contain
 
+.icon-menu
+  font-size 20px
+  padding 6px 6px 5px
+  border-radius 2px
+  cursor pointer
+  position absolute
+  z-index 4
+  right 60px
+  top 70px
+  margin-top -3px
+  background-color rgba(255, 255, 255, .9)
 #topArchive
   height 100%
 
@@ -160,4 +171,74 @@
       &:nth-child(1)
         margin-left 1px
         border-right 1px solid #eaeaea
+        
+.nav
+  position fixed
+  height 100%
+  width 100%
+  background-color rgba(255, 255, 255, .97)
+  z-index 3
+  top -100%
+  transition top 0.3s cubic-bezier(0.25, 0.5, 0.5, 0.9)
 
+html, body
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-font-smoothing: antialiased;
+  background: #fff;
+  
+body
+  font-family "Hiragino Sans GB","Hiragino Sans GB W3","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif
+  font-size 14px
+
+body.mu 
+  overflow hidden
+  height 100%
+  .nav
+    top 0
+    a
+      color #999
+    p
+      color #999
+      font-size 11px
+      position absolute
+      width 100%
+      text-align center
+      bottom 30px
+      &:first-letter
+        font-family sans-serif
+
+  .icon-menu 
+    color #333
+    &:before 
+      content "\e609"
+  .logo
+    z-index 4
+    a
+      background url('/assets/images/archive-logo.png') 100% 100% no-repeat
+      background-size contain
+
+html.mu 
+    height 100%
+
+.menu 
+  text-align center
+  margin-top 200px
+  li
+    font-size 20px
+    display inline-block
+    margin 0 20px 20px 0
+  a
+    color #666
+    letter-spacing 1px
+    &:hover
+      color #333
+  a.pviewa
+    text-decoration none
+    &:hover
+      color #333
+#container
+  position absolute
+  top 0
+  left 0
+  width 100%
+  height 100%

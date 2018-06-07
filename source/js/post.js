@@ -33,8 +33,10 @@
   var init = function(){
     var pageId = decodeURIComponent(location.pathname);
     leanCloudInit(pageId);
+
     var isLiked = window.localStorage.getItem(location.pathname+'_liked');
 
+    // 生成二维码
     new QRCode($('#qrcode')[0], {
       text: location.href,
       width: 128,
@@ -72,7 +74,6 @@
     $('.like-this').on('click', function(){
       var isLiked = window.localStorage.getItem(location.pathname+'_liked'),
           that = this;
-
       // 已经点过喜欢的
       if(!!isLiked && isLiked == 'true') {
         leancloud.reduceCount('like', pageId, function(status, error) {
@@ -89,10 +90,13 @@
           if(!!error) console.error(error);
           window.localStorage.setItem(location.pathname + '_liked', true);
           $(that).addClass('heartAnimation');
-
           renderComment(pageId);
         })
       }
+    });
+
+    $('.icon-wechat').on('click', function() {
+      $('#qrcode').toggle()
     });
   };
   init();
