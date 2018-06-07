@@ -1,8 +1,8 @@
 ;(function(window, undefined){
   var leancloud = {
 
-    appId: 'bmBLlAnGqYMrkdSpw1HmjPiy-gzGzoHsz',
-    appKey: 'JYawwvAvz8dkzdYAu4qh1RnF',
+    appId: window.DIASPORA_CONFIG.leancloud_appId,
+    appKey: window.DIASPORA_CONFIG.leancloud_appKey,
 
     /**
      * 初始化leancloud

@@ -1,3 +1,12 @@
+<style>
+  .index-header .logo {
+    background-image: url("<%- (config.diaspora && config.diaspora.logo) ? config.diaspora.logo : '/assets/logo.png'%>") !important;
+  }
+
+  body.mu .logo a {
+    background-image: url("<%- (config.diaspora && config.diaspora.dark_logo) ? config.diaspora.dark_logo : '/assets/archive-logo.png'%>") !important;
+  }
+</style>
 <div id="pageLoader"></div>
 <div class="nav">
   <ul id="menu-menu" class="menu">

@@ -104,8 +104,23 @@ links:
 ## Key: host.http {link_url} QiniuOSS http url.
 ## Key: host https {link_url} QiniuOSS https url.
 qiniu:
-  enabled: true #是否开启七牛
+  enabled: false #是否开启七牛
   ssl: true #是否开启https
   host:
     http: http://os5ajhpu8.bkt.clouddn.com #七牛http域名
     https: https://images.kya.cc # 七牛https域名
+
+# Diaspora theme config.
+## how to get leancloud appId and appKey? please see doc: https://valine.js.org/quickstart/
+## Key: default_pic {picture_url} article default picture.
+## Key: default_mp3 {mp3_url} article default background music.
+## Key: leancloud_appId {string} leancloud appId.
+## Key: leancloud_appKey {string} leancloud appKey.
+diaspora:
+  logo:
+  dark_logo:
+  icon:
+  default_pic:
+  default_mp3:
+  leancloud_appId:
+  leancloud_appKey:

@@ -10,6 +10,6 @@
     <meta name="description" content="<%- config.description %>">
     <meta name="author" content="<%- config.author %>">
     <%- css('style/diaspora') %>
-    <link rel="icon" type="image/png" href="/assets/icon.png">
+    <link rel="icon" type="image/png" href="<%- (config.diaspora && config.diaspora.icon) ? config.diaspora.icon : '/assets/icon.png' %>">
 </head>
 

@@ -8,7 +8,7 @@
  */
 var getArticlePic = function getArticlePic(archive, opts) {
   var pic = '',
-      defaultPic = '/assets/images/598ac151a702e.jpg',
+      defaultPic = hexo.config.diaspora.default_pic || '/assets/images/default.jpg',
       qiniuConfig = hexo.config.qiniu || hexo.theme.config.qiniu;
       
   archive.pic = archive.pic || defaultPic;
