@@ -74,6 +74,29 @@ pic:
 
 **6.** 根据配置文件信息修改 `_config.yml`.
 
+**7.** 添加关于和友情链接页面.
+
+```shell
+$ hexo new page about && hexo new page links
+```
+- 添加 `layout` 属性.
+${hexo_root}/source/about/index.md
+```yaml
+---
+title: about
+date: 2018-06-08 02:52:14
+layout: about
+---
+```
+${hexo_root}/source/links/links.md
+```yaml
+---
+title: links
+date: 2018-06-08 02:52:14
+layout: links
+---
+```
+
 **7.** 启动hexo
 
 ```shell

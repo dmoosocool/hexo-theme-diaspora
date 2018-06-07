@@ -67,14 +67,37 @@ pic:
 
 **6.** upgrade your `_config.yml`.
 
-**7.** run hexo.
+**7.** add about, links page.
+
+```shell
+$ hexo new page about && hexo new page links
+```
+- add `layout`.
+${hexo_root}/source/about/index.md
+```yaml
+---
+title: about
+date: 2018-06-08 02:52:14
+layout: about
+---
+```
+${hexo_root}/source/links/links.md
+```yaml
+---
+title: links
+date: 2018-06-08 02:52:14
+layout: links
+---
+```
+
+**8.** run hexo.
 
 ```shell
 $ cd ${hexo_root}
 $ hexo clean && hexo g && hexo s
 ```
 
-**8.** congratulations
+**9.** congratulations
 
 see your beautiful blog. open the link on your browser. http://localhost:4000
 

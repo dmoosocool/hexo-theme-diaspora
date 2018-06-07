@@ -1,8 +1,8 @@
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 <script>
     window.DIASPORA_CONFIG = {
-        leancloud_appId: <%- (config.diaspora && config.diaspora.leancloud_appId) ? `'${config.diaspora.leancloud_appId}'` : '""' %>,
-        leancloud_appKey: <%- (config.diaspora && config.diaspora.leancloud_appKey) ? `'${config.diaspora.leancloud_appKey}'` : '""' %>,
+        leancloud_appId: '<%- (config.diaspora && config.diaspora.leancloud_appId) ? config.diaspora.leancloud_appId: "" %>',
+        leancloud_appKey: '<%- (config.diaspora && config.diaspora.leancloud_appKey) ? config.diaspora.leancloud_appKey : "" %>',
     }
 </script>
 <%- js('lib/utils') %>

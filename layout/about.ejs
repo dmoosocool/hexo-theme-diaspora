@@ -2,6 +2,10 @@
   .article-wapper .content:before{
     background-color: #fff;
   }
+  
+  #top .archive-logo {
+    background-image: url("<%- (config.diaspora && config.diaspora.dark_logo) ? config.diaspora.dark_logo : '/assets/images/archive-logo.png'%>") !important;
+  }
 </style>
 <div id="top">
   <a class="archive-logo" href="<%- config.root%>"><%- config.title%></a>
