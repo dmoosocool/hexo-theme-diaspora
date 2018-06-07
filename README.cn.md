@@ -2,7 +2,7 @@
 
 > 一个漂亮的 hexo 主题.
 
-
+- [Chinese Documentation](https://github.com/dmoosocool/hexo-theme-diaspora/blob/master/README.cn.md) | [English Documentation](https://github.com/dmoosocool/hexo-theme-diaspora/blob/master/README.md).
 
 ## 案例
 
