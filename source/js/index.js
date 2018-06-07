@@ -26,7 +26,7 @@
     }
   };
 
-  var getArchiveCount = function() {
+  var getArticleCount = function() {
     window.leancloud.initVA();
     $('.archive-list .archive').each(function(n, archive) {
       var pageId = $(archive).find('a').eq(0).attr('href');
@@ -43,7 +43,7 @@
   };
 
   $(function(){
-    getArchiveCount();
+    getArticleCount();
     init();
   });
 }(window));

@@ -16,7 +16,7 @@
   <!-- 文章描述 -->
   <div class="describe">
     <span class="date"><%- getDiasporaDate(full_date(page.date, 'MM DD, YYYY')) %></span>
-    <span class="length">字数　<em><%- getArchiveCount(page.content)%></em></span>
+    <span class="length">字数　<em><%- getArticleCount(page.content)%></em></span>
     <span class="reader">阅读 <em></em></span>
     <span class="comment">回复 <em></em></span>
     <span class="likes">喜欢 <em></em></span>
@@ -55,7 +55,7 @@
         </div>
         <div class="article-right">
           <a href="<%- url_for(article.path) %>">
-            <img src="<%- getArchivePic(article, {width: 200, quality: 100}) %>"/>
+            <img src="<%- getArticlePic(article, {width: 200, quality: 100}) %>"/>
           </a>
         </div>
       </li>

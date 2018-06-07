@@ -6,7 +6,7 @@
  * @param {Integer} opts.quality 图片质量
  * @param {Integer} opts.width 指定宽度 如果不指定宽度则默认值压缩图片.
  */
-var getArchivePic = function getArchivePic(archive, opts) {
+var getArticlePic = function getArticlePic(archive, opts) {
   var pic = '',
       defaultPic = '/assets/images/598ac151a702e.jpg',
       qiniuConfig = hexo.theme.config.qiniu;
@@ -61,4 +61,4 @@ var getArchivePic = function getArchivePic(archive, opts) {
   return pic;
 };
 
-hexo.extend.helper.register('getArchivePic', getArchivePic);
+hexo.extend.helper.register('getArticlePic', getArticlePic);
