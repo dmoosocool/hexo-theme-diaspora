@@ -72,38 +72,16 @@ pic:
 
 ```
 
-**6.** 设置你的leancloud的appId和appKey (${hexo_root}/themes/diaspora/source/lib/leancloud.js)
+**6.** 根据配置文件信息修改 `_config.yml`.
 
-```shell
-$ cd ${hexo_root}
-$ vi themes/diaspora/source/lib/leancloud.js
-```
-
-- 找到文件头部
-
-```javascript
-;(function(window, undefined){
-  var leancloud = {
-    appId: 'bmBLlAnGqYMrkdSpw1HmjPiy-gzGzoHsz',  // upgrade yours appId.
-    appKey: 'JYawwvAvz8dkzdYAu4qh1RnF',			// upgrade yours appKey.
-    ...
-  };
-  ...
-}(window);
-```
-
-- 如何获取leancloud的appId和appKey， 请看此文档: https://valine.js.org/quickstart/ 
-
-**7.** 根据配置文件信息修改 `_config.yml`.
-
-**8.** 启动hexo
+**7.** 启动hexo
 
 ```shell
 $ cd ${hexo_root}
 $ hexo clean && hexo g && hexo s
 ```
 
-**9.** 恭喜
+**8.** 恭喜
 
 看看你漂亮的hexo博客吧~ 打开浏览器访问: http://localhost:4000
 

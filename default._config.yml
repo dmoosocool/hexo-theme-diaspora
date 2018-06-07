@@ -112,8 +112,11 @@ qiniu:
 
 # Diaspora theme config.
 ## how to get leancloud appId and appKey? please see doc: https://valine.js.org/quickstart/
-## Key: default_pic {picture_url} article default picture.
-## Key: default_mp3 {mp3_url} article default background music.
+## Key: logo {picture_url} website logo. default:/assets/images/logo.png
+## Key: darklogo {picture_url} website dark logo. default:/assets/images/archive-logo.png
+## Key: icon {picture_url} website icon. default:/assets/icon.png
+## Key: default_pic {picture_url} article default picture. default: /assets/images/default.jpg
+## Key: default_mp3 {mp3_url} article default background music. not complate. comming soon.
 ## Key: leancloud_appId {string} leancloud appId.
 ## Key: leancloud_appKey {string} leancloud appKey.
 diaspora:

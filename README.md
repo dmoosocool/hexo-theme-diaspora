@@ -65,40 +65,16 @@ mp3:
 pic:
 ---
 
-```
+**6.** upgrade your `_config.yml`.
 
-**6.** setting your leancloud appId and appKey. (${hexo_root}/themes/diaspora/source/lib/leancloud.js)
-
-```shell
-$ cd ${hexo_root}
-$ vi themes/diaspora/source/lib/leancloud.js
-```
-
-- finding the file top.
-
-```javascript
-;(function(window, undefined){
-  var leancloud = {
-    appId: 'bmBLlAnGqYMrkdSpw1HmjPiy-gzGzoHsz',  // upgrade yours appId.
-    appKey: 'JYawwvAvz8dkzdYAu4qh1RnF',			// upgrade yours appKey.
-    ...
-  };
-  ...
-}(window);
-```
-
-- how to get leancloud appId and appKey, please see this doc : https://valine.js.org/quickstart/ 
-
-**7.** upgrade your `_config.yml`.
-
-**8.** run hexo.
+**7.** run hexo.
 
 ```shell
 $ cd ${hexo_root}
 $ hexo clean && hexo g && hexo s
 ```
 
-**9.** congratulations
+**8.** congratulations
 
 see your beautiful blog. open the link on your browser. http://localhost:4000
 
