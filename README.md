@@ -2,7 +2,7 @@
 
 > A beautiful hexo theme.
 
-- [Chinese Documentation](https://github.com/dmoosocool/hexo-theme-diaspora/blob/master/README.cn.md)
+
 
 ## Demo
 
@@ -54,9 +54,53 @@ $ mv _config.yml bak._config.yml
 $ cp themes/disapora/default._config.yml ./_config.yml
 ```
 
-**5.** rewrite your configure.
+**5.** update post template (${hexo_root}/scaffolds/post.md).
 
+```yaml
+---
+title: {{ title }}
+date: {{ date }}
+tags: 
+mp3:
+pic:
+---
 
+```
+
+**6.** setting your leancloud appId and appKey. (${hexo_root}/themes/diaspora/source/lib/leancloud.js)
+
+```shell
+$ cd ${hexo_root}
+$ vi themes/diaspora/source/lib/leancloud.js
+```
+
+- finding the file top.
+
+```javascript
+;(function(window, undefined){
+  var leancloud = {
+    appId: 'bmBLlAnGqYMrkdSpw1HmjPiy-gzGzoHsz',  // upgrade yours appId.
+    appKey: 'JYawwvAvz8dkzdYAu4qh1RnF',			// upgrade yours appKey.
+    ...
+  };
+  ...
+}(window);
+```
+
+- how to get leancloud appId and appKey, please see this doc : https://valine.js.org/quickstart/ 
+
+**7.** upgrade your `_config.yml`.
+
+**8.** run hexo.
+
+```shell
+$ cd ${hexo_root}
+$ hexo clean && hexo g && hexo s
+```
+
+**9.** congratulations
+
+see your beautiful blog. open the link on your browser. http://localhost:4000
 
 ## Upgrade theme
 
@@ -100,7 +144,7 @@ if you find any bugs or demands, please write a as detailed as possible [issue](
 - [Valine](https://github.com/xCss/Valine) ( **a beautiful comment system.**)
 - [qiniu OSS](https://www.qiniu.com)
 - [LeanCloud](https://leancloud.cn/)
-- And thanks for using this theme of cute you. (≧∇≦)ﾉ
+- and thank you used the beautiful hexo themes
 
 
 

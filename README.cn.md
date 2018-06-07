@@ -54,7 +54,58 @@ $ mv _config.yml bak._config.yml
 $ cp themes/disapora/default._config.yml ./_config.yml
 ```
 
-**5.** 重写你的配置文件.
+**5.** 修改`post.md` 脚手架 (${hexo_root}/scaffolds/post.md).
+
+```shell
+$ cd ${hexo_root}
+$ vi _config.yml
+```
+
+```yaml
+---
+title: {{ title }}
+date: {{ date }}
+tags: 
+mp3:
+pic:
+---
+
+```
+
+**6.** 设置你的leancloud的appId和appKey (${hexo_root}/themes/diaspora/source/lib/leancloud.js)
+
+```shell
+$ cd ${hexo_root}
+$ vi themes/diaspora/source/lib/leancloud.js
+```
+
+- 找到文件头部
+
+```javascript
+;(function(window, undefined){
+  var leancloud = {
+    appId: 'bmBLlAnGqYMrkdSpw1HmjPiy-gzGzoHsz',  // upgrade yours appId.
+    appKey: 'JYawwvAvz8dkzdYAu4qh1RnF',			// upgrade yours appKey.
+    ...
+  };
+  ...
+}(window);
+```
+
+- 如何获取leancloud的appId和appKey， 请看此文档: https://valine.js.org/quickstart/ 
+
+**7.** 根据配置文件信息修改 `_config.yml`.
+
+**8.** 启动hexo
+
+```shell
+$ cd ${hexo_root}
+$ hexo clean && hexo g && hexo s
+```
+
+**9.** 恭喜
+
+看看你漂亮的hexo博客吧~ 打开浏览器访问: http://localhost:4000
 
 
 
@@ -109,4 +160,3 @@ $ git pull
 **hexo-theme-diaspora** © [dmoosocool](https://github.com/dmoosocool),  根据[MIT](https://github.com/dmoosocool/hexo-theme-diaspora/blob/master/LICENSE)许可证发布.
 
 > Blog [@dmoosocool](https://www.kya.cc) · GitHub [@dmoosocool](https://github.com/dmoosocool) 
-
