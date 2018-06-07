@@ -1,0 +1,111 @@
+# Hexo Configuration
+## Docs: https://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
+
+# Site
+title: hexo-theme-diaspora
+subtitle: diaspora for hexo.  
+description: DM|全渣攻城獅
+author: Dmoosocool
+language: ch-ZH
+timezone:
+keywords: 'hexo,hexo-theme,disapora,dmoosocool'
+
+# URL
+## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
+url: /
+root: /
+permalink: :year/:month/:day/:title/
+permalink_defaults:
+
+# Directory
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render:
+
+# Writing
+new_post_name: :title.md # File name of new posts
+default_layout: post
+titlecase: false # Transform title into titlecase
+external_link: true # Open external links in new tab
+filename_case: 0
+render_drafts: false
+post_asset_folder: true
+relative_link: false
+future: true
+highlight:
+  enable: true
+  line_number: true
+  auto_detect: false
+  tab_replace:
+  
+# Home page setting
+# path: Root path for your blogs index page. (default = '')
+# per_page: Posts displayed per page. (0 = disable pagination)
+# order_by: Posts order. (Order by date descending by default)
+index_generator:
+  path: ''
+  per_page: 10
+  order_by: -date
+  
+# Category & Tag
+default_category: uncategorized
+category_map:
+tag_map:
+
+# Date / Time format
+## Hexo uses Moment.js to parse and display date
+## You can customize the date format as defined in
+## http://momentjs.com/docs/#/displaying/format/
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+
+
+# Extensions
+## Plugins: https://hexo.io/plugins/
+## Themes: https://hexo.io/themes/
+theme: diaspora
+
+# Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy:
+  type:
+
+# Menu
+## key is display words
+## value is link. if is a outer chian. link has target="_blank" attributes.
+menu:
+  首页: /
+  关于: /about/
+  友链: /links/
+  百度: http://www.baidu.com
+
+# Friend Links {array object}
+## Key: item {object}
+## Key: item.url {link_url} url link.
+## Key: item.icon {picture_url} friend's page icon.
+## Key: item.title {string} friend's page name.
+## Key: item.description {string} friend's page description.
+links:
+  - item:
+      url: https://www.baidu.com
+      icon: https://dmoo.cool/assets/icon.png
+      title: 百度
+      description: 度娘萌萌哒(๑•̀ㅂ•́)و✧
+
+# Qiniu OSS.
+## Key: enabled {boolean} Is it open Qiniu OSS.
+## Key: ssl {boolean} Is it open https.
+## Key: host.http {link_url} QiniuOSS http url.
+## Key: host https {link_url} QiniuOSS https url.
+qiniu:
+  enabled: true #是否开启七牛
+  ssl: true #是否开启https
+  host:
+    http: http://os5ajhpu8.bkt.clouddn.com #七牛http域名
+    https: https://images.kya.cc # 七牛https域名

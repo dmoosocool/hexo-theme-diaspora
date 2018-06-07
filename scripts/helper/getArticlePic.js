@@ -9,7 +9,7 @@
 var getArticlePic = function getArticlePic(archive, opts) {
   var pic = '',
       defaultPic = '/assets/images/598ac151a702e.jpg',
-      qiniuConfig = hexo.theme.config.qiniu;
+      qiniuConfig = hexo.config.qiniu || hexo.theme.config.qiniu;
       
   archive.pic = archive.pic || defaultPic;
   // 如果文章中使用的外链图片则直接使用, 如果是使用的文章内的图片则使用本地图片.
