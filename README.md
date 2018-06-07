@@ -2,7 +2,7 @@
 
 > A beautiful hexo theme.
 
-
+- [Chinese Documentation](https://github.com/dmoosocool/hexo-theme-diaspora/blob/master/README.cn.md)
 
 ## Demo
 
