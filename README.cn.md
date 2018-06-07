@@ -34,7 +34,7 @@ $ hexo init Lolita
 $ cd Lolita
 ```
 
-**2.** check your **hexo root** directory. There must be `node_modules`, `source`, `themes` and other directories:
+**2.** 检查你的hexo主目录，这里必须包含node_modules, source, themes 和其他文件夹.
 
 ```shell
 $ ls
