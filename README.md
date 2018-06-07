@@ -100,7 +100,7 @@ if you find any bugs or demands, please write a as detailed as possible [issue](
 - [Valine](https://github.com/xCss/Valine) ( **a beautiful comment system.**)
 - [qiniu OSS](https://www.qiniu.com)
 - [LeanCloud](https://leancloud.cn/)
-- And thank you for using this theme of cute you. (≧∇≦)ﾉ
+- And thanks for using this theme of cute you. (≧∇≦)ﾉ
 
 
 
