@@ -65,54 +65,61 @@
     </div>
   </div>
   </header>
-
-  <div class="archive-list-wrapper">
-    <div class="archive-list">
+  
   <%
-    for(var i = 0; i < archiveList.length; i ++) {
-    var archive = archiveList[i];
-    if(topArchive._id == archive._id) continue;
+    if(archiveList.length > 1) {
   %>
-    <div class="archive">
-      <a href="<%- url_for(archive.path) %>" title="<%- archive.title%>">
-        <img src="<%- getArticlePic(archive, {width: 680, quality: 100}) %>"/>
-      </a>
-      <div class="archive-content">
-        <p class="archive-time"><%- getDiasporaDate(full_date(archive.date, 'MM DD, YYYY')) %></p>
-        <h3 class="archive-title"><a href="<%- url_for(archive.path) %>" /><%- archive.title %></a></h3>
-        <p class="archive-description"><%- truncate(strip_html(archive.excerpt || archive.content ), {length: 50}) %></p>
-
-        <div class="archive-info">
-          <i class="icon-letter"><%- getArticleCount(archive.content)%></i>
-          <i class="icon-view"></i>
-          <i class="icon-like"></i>
+  <div class="archive-list-wrapper">
+      <div class="archive-list">
+      <%
+        for(var i = 0; i < archiveList.length; i ++) {
+        var archive = archiveList[i];
+        if(topArchive._id == archive._id) continue;
+      %>
+      <div class="archive">
+        <a href="<%- url_for(archive.path) %>" title="<%- archive.title%>">
+          <img src="<%- getArticlePic(archive, {width: 680, quality: 100}) %>"/>
+        </a>
+        <div class="archive-content">
+          <p class="archive-time"><%- getDiasporaDate(full_date(archive.date, 'MM DD, YYYY')) %></p>
+          <h3 class="archive-title"><a href="<%- url_for(archive.path) %>" /><%- archive.title %></a></h3>
+          <p class="archive-description"><%- truncate(strip_html(archive.excerpt || archive.content ), {length: 50}) %></p>
+  
+          <div class="archive-info">
+            <i class="icon-letter"><%- getArticleCount(archive.content)%></i>
+            <i class="icon-view"></i>
+            <i class="icon-like"></i>
+          </div>
+        </div>
+      </div>    
+      <%        
+        }
+      %>
+      </div>
+  
+      <div class="page-wapper">
+        <div class="page<%- (page.prev && page.next) ? ' more' : ''%>">
+      <%
+        if(page.current > 1){
+      %>
+          <a href="<%- config.root + page.prev_link%>">上一页</a>
+      <%    
+        }
+      %>
+      <%
+        if(page.current < page.total){
+      %>
+          <a href="<%- config.root + page.next_link%>">下一页</a>
+      <%
+        }
+      %>
         </div>
       </div>
-    </div>    
-  <%        
+    </div>
+  <%
     }
   %>
-    </div>
 
-    <div class="page-wapper">
-      <div class="page<%- (page.prev && page.next) ? ' more' : ''%>">
-  <%
-    if(page.current > 1){
-  %>
-        <a href="<%- config.root + page.prev_link%>">上一页</a>
-  <%    
-    }
-  %>
-  <%
-    if(page.current < page.total){
-  %>
-        <a href="<%- config.root + page.next_link%>">下一页</a>
-  <%
-    }
-  %>
-      </div>
-    </div>
-  </div>
 </div>
 <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
 <%- partial('tpl/footer'); %>
