@@ -64,6 +64,7 @@ tags:
 mp3:
 pic:
 ---
+```
 
 **6.** upgrade your `_config.yml`.
 
